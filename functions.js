@@ -8,7 +8,8 @@ function initialize(){
 	]
 
 	value_table = randomizer(value_table);
-	
+	console.log(value_table)
+	displayTable(value_table)
 }
 
 function randomizer(object){
@@ -26,4 +27,15 @@ function randomizer(object){
 	var rand_coord = free_spaces[rand];
 	table[rand_coord[0]][rand_coord[1]] = 2
 	return table
+}
+
+function displayTable(object){
+	table = object;
+	for(var i = 0; i<5; i++){
+		for(var j = 0; j<5; j++){
+			if(table[i][j] != 0){
+				$("#" + i + j).text(table[i][j]);
+			}
+		}
+	}
 }
