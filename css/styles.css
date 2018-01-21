@@ -1,0 +1,32 @@
+body{
+	padding: 30px;
+	background-color: #497DC0;
+}
+.center{
+	text-align:center;
+}
+.heading{
+	font-size: 100px;
+	display: block;
+	color: white;
+}
+.grid-container{
+	display: flex;
+	align-items: center;
+	flex-direction:column;
+}
+.main{
+	width: 500px;
+	height: 500px;
+	background-color: rgba(0,0,0,0);
+	border-radius: 10px;
+}
+tr{
+	height: 20%
+}
+td{
+	width: 20%;
+	border-radius: 15px;
+	border:1px solid rgba(0,0,0,0);
+	background-color: lightgray;
+}
