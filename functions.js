@@ -78,9 +78,11 @@ function moveLeft(object){
 		while(newrow.length < 5){
 			newrow.push(0)
 		}
+		newrow = addNumbers(newrow)
 		table[i] = newrow
 	}
 	value_table = table;
+	value_table = randomizer(value_table);
 	displayTable(value_table)
 }
 function moveRight(object){
@@ -97,9 +99,11 @@ function moveRight(object){
 		while(newrow.length < 5){
 			newrow.push(0)
 		}
+		newrow = addNumbers(newrow);
 		table[i] = newrow.reverse();
 	}
 	value_table = table;
+	value_table = randomizer(value_table);
 	displayTable(value_table)
 }
 
@@ -116,11 +120,13 @@ function moveUp(object){
 		while(newcolmn.length < 5){
 			newcolmn.push(0)
 		}
+		newcolmn = addNumbers(newcolmn);
 		for(var i = 0; i<5; i++){
 			table[i][j] = newcolmn[i];
 		}
 	}
 	value_table = table;
+	value_table = randomizer(value_table);
 	displayTable(value_table)
 }
 
@@ -137,11 +143,33 @@ function moveDown(object){
 		while(newcolmn.length < 5){
 			newcolmn.push(0)
 		}
+		newcolmn = addNumbers(newcolmn)
 		newcolmn.reverse();
 		for(var i = 0; i<5; i++){
 			table[i][j] = newcolmn[i];
 		}
 	}
 	value_table = table;
+	value_table = randomizer(value_table);
 	displayTable(value_table)
 }
+
+function addNumbers(object){
+	var row = object;
+	var new_row = []
+	for(var i = 0; i<row.length; i++){
+		if(row[i] == row[i+1]){
+			new_row.push(row[i] + row[i+1])
+			i++;
+		}
+		else{
+			new_row.push(row[i])
+		}
+	}
+	while(new_row.length<5){
+		new_row.push(0);
+	}
+	return new_row
+
+}
+	
