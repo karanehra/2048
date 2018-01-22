@@ -22,7 +22,7 @@ body{
 	border-radius: 10px;
 }
 tr{
-	height: 20%
+	height: 20%;
 }
 td{
 	width: 20%;
@@ -35,4 +35,7 @@ td{
 	text-align: center;
 	font-size: 45px;
 
+}
+.filled{
+	background-color: #FFFFFF !important;
 }

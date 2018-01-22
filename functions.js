@@ -1,15 +1,14 @@
-function initialize(){
-	var value_table = [
+var value_table = [
 		[0,0,0,0,0],
 		[0,0,0,0,0],
 		[0,0,0,0,0],
 		[0,0,0,0,0],
 		[0,0,0,0,0]
 	]
-
-	value_table = randomizer(value_table);
-	console.log(value_table)
-	displayTable(value_table)
+	
+function initialize(){
+	console.log(randomizer(value_table))
+	displayTable(randomizer(value_table))
 }
 
 function randomizer(object){
@@ -30,12 +29,30 @@ function randomizer(object){
 }
 
 function displayTable(object){
-	table = object;
+	var table = object;
 	for(var i = 0; i<5; i++){
 		for(var j = 0; j<5; j++){
 			if(table[i][j] != 0){
 				$("#" + i + j).text(table[i][j]);
+				$("#" + i + j).addClass("filled");
 			}
 		}
+	}
+}
+
+function moveLeft(object){
+	var table = object;
+	for(var i = 0; i <5; i++){
+		var row = table[i];
+		var newrow = [];
+		for(var j = 0; j<5; j++){
+			if( row[j] != 0 ){
+				newrow.push(row[j]);
+			}
+		}
+		while(newrow.length < 6){
+			newrow.add(0)
+		}
+		table[i] = newrow
 	}
 }
