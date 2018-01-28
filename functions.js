@@ -7,6 +7,13 @@ var value_table = [
 	]
 
 function initialize(){
+	value_table = [
+		[0,0,0,0,0],
+		[0,0,0,0,0],
+		[0,0,0,0,0],
+		[0,0,0,0,0],
+		[0,0,0,0,0]
+	]
 	value_table = randomizer(value_table)
 	displayTable(value_table)
 }
@@ -65,7 +72,6 @@ function displayTable(object){
 }
 
 function moveLeft(object){
-	console.log("hels left")
 	var table = object;
 	for(var i = 0; i <5; i++){
 		var row = table[i];
@@ -81,12 +87,19 @@ function moveLeft(object){
 		newrow = addNumbers(newrow)
 		table[i] = newrow
 	}
-	value_table = table;
-	value_table = randomizer(value_table);
-	displayTable(value_table)
+	// value_table = table;
+	// value_table = randomizer(value_table);
+	// displayTable(value_table)
+	if (value_table == table){
+		displayTable(value_table)
+	}
+	else{
+		value_table = randomizer(table);
+		displayTable(value_table)
+	}
+	
 }
 function moveRight(object){
-	console.log("hels")
 	var table = object;
 	for(var i = 0; i <5; i++){
 		var row = table[i];
@@ -108,7 +121,6 @@ function moveRight(object){
 }
 
 function moveUp(object){
-	console.log("hels up")
 	var table = object;
 	for(var j = 0; j <5; j++){
 		var newcolmn =[];
@@ -131,11 +143,10 @@ function moveUp(object){
 }
 
 function moveDown(object){
-	console.log("hels up")
 	var table = object;
 	for(var j = 4; j>-1; j--){
 		var newcolmn =[];
-		for(var  i= 0; i<5; i++){
+		for(var  i= 4; i>-1; i--){
 			if( table[i][j] != 0 ){
 				newcolmn.push(table[i][j]);
 			}
@@ -144,9 +155,8 @@ function moveDown(object){
 			newcolmn.push(0)
 		}
 		newcolmn = addNumbers(newcolmn)
-		newcolmn.reverse();
 		for(var i = 0; i<5; i++){
-			table[i][j] = newcolmn[i];
+			table[i][j] = newcolmn[4-i];
 		}
 	}
 	value_table = table;
