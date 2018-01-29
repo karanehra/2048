@@ -18,7 +18,7 @@ function initialize(){
 	displayTable(value_table)
 }
 
-$(document).keydown(function(e){
+$(document).keyup(function(e){
 	switch(e.which){
 		case 37: //left
 			moveLeft(value_table);
@@ -50,7 +50,14 @@ function randomizer(object){
 	var len = free_spaces.length
 	var rand =Math.floor(Math.random()*(len-1))
 	var rand_coord = free_spaces[rand];
-	table[rand_coord[0]][rand_coord[1]] = 2
+
+	var prob = Math.random();
+	if(prob < 0.21){
+		table[rand_coord[0]][rand_coord[1]] = 4
+	} else{
+		table[rand_coord[0]][rand_coord[1]] = 2
+	}
+	$("#"+(rand_coord[0]+1))
 	return table
 }
 
@@ -60,6 +67,7 @@ function displayTable(object){
 		for(var j = 0; j<5; j++){
 			if(table[i][j] != 0){
 				$("#" + (i+1) + (j+1)).text(table[i][j]);
+				$("#" + (i+1) + (j+1)).addClass(String(table[i][j]));
 				$("#" + (i+1) + (j+1)).addClass("filled");
 			}
 			else{
@@ -68,6 +76,29 @@ function displayTable(object){
 
 			}
 		}
+	}
+}
+
+function colorFiller(i,j){
+	var tile_value = value_table[i][j]
+	if (tile_value = 2){
+		$("#"+(i+1)+(j+1)).css({"background-color":"#BDBDBD","color":"#212121"});
+	} else if (tile_value = 4){
+		$("#"+(i+1)+(j+1)).css({"background-color":"#BDBDBD","color":"#212121"});
+	} else if (tile_value = 8){
+		$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"#212121"});
+	} else if (tile_value = 16){
+		$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"#212121"});
+	} else if (tile_value = 32){
+		$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"#212121"});
+	} else if (tile_value = 64){
+		$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"#212121"});
+	} else if (tile_value = 128){
+		$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"#212121"});
+	} else if (tile_value = 256){
+		$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"#212121"});
+	} else if (tile_value = 512){
+		$("#"+(i+1)+(j+1)).css({"background-color":"#455A64","color":"#FFFFFF"});
 	}
 }
 
