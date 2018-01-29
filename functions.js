@@ -68,7 +68,7 @@ function displayTable(object){
 			if(table[i][j] == 2){
 				$("#" + (i+1) + (j+1)).text(table[i][j]);
 				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
-				$("#"+(i+1)+(j+1)).css({"background-color":"#BDBDBD","color":"black"});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#FFFFFF","color":"black"});
 			} else if(table[i][j] == 4){
 				$("#" + (i+1) + (j+1)).text(table[i][j]);
 				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
@@ -80,32 +80,37 @@ function displayTable(object){
 			} else if(table[i][j] == 16){
 				$("#" + (i+1) + (j+1)).text(table[i][j]);
 				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
-				$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"black"});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#9edeff","color":"black"});
 			} else if(table[i][j] == 32){
 				$("#" + (i+1) + (j+1)).text(table[i][j]);
 				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
-				$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"black"});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#9edeff","color":"black"});
 			} else if(table[i][j] == 64){
 				$("#" + (i+1) + (j+1)).text(table[i][j]);
 				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
-				$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"black"});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#9edeff","color":"white"});
 			} else if(table[i][j] == 128){
 				$("#" + (i+1) + (j+1)).text(table[i][j]);
 				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
-				$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"black"});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#ffeeb2","color":"black"});
 			} else if(table[i][j] == 256){
 				$("#" + (i+1) + (j+1)).text(table[i][j]);
 				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
-				$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"black"});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#ffda5b","color":"black"});
 			} else if(table[i][j] == 512){
 				$("#" + (i+1) + (j+1)).text(table[i][j]);
 				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
-				$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"black"});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#ffc500","color":"black"});
 			} else if(table[i][j] == 1024){
 				$("#" + (i+1) + (j+1)).text(table[i][j]);
 				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
-				$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"black"});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#ffaa9b","color":"black"});
+			} else if(table[i][j] > 1024){
+				$("#" + (i+1) + (j+1)).text(table[i][j]);
+				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#ff5a3d","color":"white"});
 			}
+
 			else{
 				$("#" + (i+1) + (j+1)).text("");
 				$("#" + (i+1) + (j+1)).css({"background-color":"#afafaf","color":"black"});
@@ -116,29 +121,7 @@ function displayTable(object){
 	}
 }
 
-function colorFiller(i,j){
-	var tile_value = value_table[i][j]
-	if (tile_value = 2){
-		$("#"+(i+1)+(j+1)).css({"background-color":"#BDBDBD","color":"#212121"});
-	} else if (tile_value = 4){
-		$("#"+(i+1)+(j+1)).css({"background-color":"#BDBDBD","color":"#212121"});
-	} else if (tile_value = 8){
-		console.log("hello")
-		$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"#212121"});
-	} else if (tile_value = 16){
-		$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"#212121"});
-	} else if (tile_value = 32){
-		$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"#212121"});
-	} else if (tile_value = 64){
-		$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"#212121"});
-	} else if (tile_value = 128){
-		$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"#212121"});
-	} else if (tile_value = 256){
-		$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"#212121"});
-	} else if (tile_value = 512){
-		$("#"+(i+1)+(j+1)).css({"background-color":"#455A64","color":"#FFFFFF"});
-	}
-}
+
 
 function moveLeft(object){
 	var table = object;
