@@ -65,14 +65,51 @@ function displayTable(object){
 	var table = object;
 	for(var i = 0; i<5; i++){
 		for(var j = 0; j<5; j++){
-			if(table[i][j] != 0){
+			if(table[i][j] == 2){
 				$("#" + (i+1) + (j+1)).text(table[i][j]);
-				$("#" + (i+1) + (j+1)).addClass(String(table[i][j]));
-				$("#" + (i+1) + (j+1)).addClass("filled");
+				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#BDBDBD","color":"black"});
+			} else if(table[i][j] == 4){
+				$("#" + (i+1) + (j+1)).text(table[i][j]);
+				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"black"});
+			} else if(table[i][j] == 8){
+				$("#" + (i+1) + (j+1)).text(table[i][j]);
+				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"black"});
+			} else if(table[i][j] == 16){
+				$("#" + (i+1) + (j+1)).text(table[i][j]);
+				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"black"});
+			} else if(table[i][j] == 32){
+				$("#" + (i+1) + (j+1)).text(table[i][j]);
+				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"black"});
+			} else if(table[i][j] == 64){
+				$("#" + (i+1) + (j+1)).text(table[i][j]);
+				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"black"});
+			} else if(table[i][j] == 128){
+				$("#" + (i+1) + (j+1)).text(table[i][j]);
+				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"black"});
+			} else if(table[i][j] == 256){
+				$("#" + (i+1) + (j+1)).text(table[i][j]);
+				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"black"});
+			} else if(table[i][j] == 512){
+				$("#" + (i+1) + (j+1)).text(table[i][j]);
+				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"black"});
+			} else if(table[i][j] == 1024){
+				$("#" + (i+1) + (j+1)).text(table[i][j]);
+				$("#" + (i+1) + (j+1)).css({"background-color":"","color":""});
+				$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"black"});
 			}
 			else{
 				$("#" + (i+1) + (j+1)).text("");
-				$("#" + (i+1) + (j+1)).removeClass("filled");
+				$("#" + (i+1) + (j+1)).css({"background-color":"#afafaf","color":"black"});
+
 
 			}
 		}
@@ -86,6 +123,7 @@ function colorFiller(i,j){
 	} else if (tile_value = 4){
 		$("#"+(i+1)+(j+1)).css({"background-color":"#BDBDBD","color":"#212121"});
 	} else if (tile_value = 8){
+		console.log("hello")
 		$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"#212121"});
 	} else if (tile_value = 16){
 		$("#"+(i+1)+(j+1)).css({"background-color":"#CFD8DC","color":"#212121"});
@@ -213,4 +251,6 @@ function addNumbers(object){
 	return new_row
 
 }
+
+
 	
